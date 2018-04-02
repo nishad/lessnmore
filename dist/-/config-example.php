@@ -19,10 +19,10 @@ define('COOKIE_SALT', 	'1a5al-sSXqO[]P83Rfoo');
 define('API_SALT',		'XqO)-O4K2595JMEOQ');
 
 // Your timezone. Because your server isn't necessarily on your time
-// Use a timezone string from here: http://www.php.net/manual/en/timezones.php
+// Use a timezone string from here: https://secure.php.net/manual/timezones.php
 // define('TIMEZONE', 'America/Winnipeg');
 
-// How should short URL slugs be generated? 
+// How should short URL slugs be generated?
 // 'base36'       - Used by the original Lessn. [0-9a-z]
 // 'mixed-smart'  - RECOMMENDED! Mixed case, except homoglyphs.
 //                - [0-9a-zA-Z] except homoglyphs [oO0lI1]
@@ -32,7 +32,13 @@ define('API_SALT',		'XqO)-O4K2595JMEOQ');
 // Best practices are documented at <https://alanhogan.com/tips/rel-shortlink-for-short-urls#service-homoglyphs>
 define('AUTO_SLUG_METHOD', 'base36'); //CHANGE to a *smart method!
 
-// String with any characters you would like to manually exclude from future 
+// Lessn was defined to return URLs like /0, /1, /2, /3 and so on,
+// but many people want 'unguessable' short URLs like /u7b3rx.
+// This option switches to such a method when an integer greater than 1 is set.
+// To retain the original behavior of sequential, short slugs, set to false.
+define('RANDOM_SLUG_LENGTH', 7);
+
+// String with any characters you would like to manually exclude from future
 // auto-generated URL slugs. false if not.
 // Note if you pick the 'smart' or 'mixed-smart' AUTO_SLUG_METHOD
 // then there is little point to this.
@@ -59,3 +65,8 @@ define('APP_NAME', 'Lessn More');
 
 // For debuggers, developers, and the curious
 define('LOG_MODE', false); // Not recommended, a bit slower.
+
+// Default (false) will make generated shortlinks use the current
+// server protocol (http or https).
+// You can hardcode a value of 'http' or 'https' (no colon or slashes).
+define('PROTOCOL_OVERRIDE', false);

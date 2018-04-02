@@ -1,3 +1,39 @@
+2.5.1
+
+- Fixes JavaScript and the Back button on the stats page when on HTTPS.
+
+
+2.5.0
+
+- **Big news!** Now you can configure Lessn More to generate random slugs of a desired length instead of incremental, guessable slugs. This means you will generate URLs like `/8RTvaN`, `/Nvb3QP` instead of `/a`, `/b`, `/c`, if desired.
+
+- The link in LM's header now points to your main admin page,  and the update check info in the footer will always link to the LM project home page.
+
+
+2.4.1
+
+- Stopped checking for new versions of Lessn More whiled logged out, because it will always fail then.
+
+
+2.4.0
+
+- Users logging in over HTTPS will be authenticated with a cookie that will not leak out over HTTPS
+
+- Cookies are now set with HTTP_ONLY, which means rogue JavaScript cannot steal your authentication cookie
+
+- There is now a LOG OUT button
+
+- Lessn More now checks for an updated version of itself whenever you use the web interface. (You still have to manually upgrade!)
+
+
+2.3.0
+
+- Lessn More will now return `http:` or `https:` short URLs to match
+	the current protocol your server is responding to, by default.
+	You can manually specify your preferred protocol in `config.php`.
+
+- Lessn More lets you shrink non-Web URIs now, too, such as `ftp:` or `magnet:`.
+
 2.2.0
 
 - Better stats page.
